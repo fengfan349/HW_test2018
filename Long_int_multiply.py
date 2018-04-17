@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 # 格子乘法
+# 没想到一个大数相乘写出这么多行代码^_^
+# 写于矿大校园一个无聊的下午
 
 M = 0
 N = 0
@@ -14,10 +16,7 @@ N = map(int,list(raw_input()))
 Lattice = [[[0]*2 for j in range(len(M))] for i in range(len(N))]
 
 lenth = len(M)*len(N)
-#print Lattice
 
-#M:[1, 2, 3] 
-#N:[1, 2, 3]
 out_multi = [0]*lenth
 out = []
 multiply = []
