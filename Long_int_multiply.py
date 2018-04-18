@@ -2,6 +2,7 @@
 # 格子乘法
 # 没想到一个大数相乘写出这么多行代码^_^
 # 写于矿大校园一个无聊的下午
+# shit! bug不断
 
 M = 0
 N = 0
@@ -46,6 +47,8 @@ def lattice(L_array):
 		turn_col = 1
 
 		for raw in range(j+1):
+			if (len(N)-1-raw) < 0:
+				break
 			for col in range(2):
 				try:
 					sum += Lattice[len(N)-1-raw][len(M)-1-j+raw+col][turn_col]
@@ -61,13 +64,13 @@ def lattice(L_array):
 		#print sum,flag_col
 		sum = sum % 10
 		out.insert(0,sum)
-	
+	print out,flag_col
 	#计算格子矩阵左上部分
 	
 	for i in range(len(N)-1):
 		sum = flag_col
 		turn_raw = 0
-		for col in range(len(M)-i):
+		for col in range(len(N)-i):
 			for raw in range(2):
 				try:
 					if (len(N)-1-i-raw-col)<0:
