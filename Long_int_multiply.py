@@ -34,16 +34,16 @@ def main():
 			temp = 0
 			#print Lattice_0[i][j],j,i
 	#print Lattice[-1][2][1]
-	lattice(Lattice)
+	lattice()
 
-def lattice(L_array):
-	out.insert(0,L_array[len(N)-1][len(M)-1][1])
+def lattice():
+	#out.insert(0,L_array[len(N)-1][len(M)-1][1])
 	turn_col = 1
 	turn_raw = 0
 	flag_col = 0
 	sum = 0
 	#计算格子矩阵右下部分
-	for j in range(1,len(M)):
+	for j in range(len(M)):
 		sum = flag_col
 		turn_col = 1
 
@@ -65,10 +65,10 @@ def lattice(L_array):
 		#print sum,flag_col
 		sum = sum % 10
 		out.insert(0,sum)
-	print out,flag_col
+	#print out,flag_col
 	#计算格子矩阵左上部分
 	
-	for i in range(len(N)-1):
+	for i in range(len(N)):
 		sum = flag_col
 		turn_raw = 0
 		for col in range(len(N)-i):
@@ -88,8 +88,8 @@ def lattice(L_array):
 		flag_col = sum / 10
 		sum = sum % 10
 		out.insert(0,sum)
-	Lattice[0][0][0] = Lattice[0][0][0]+flag_col
-	out.insert(0,Lattice[0][0][0])
+	#Lattice[0][0][0] = Lattice[0][0][0]+flag_col
+	#out.insert(0,Lattice[0][0][0])
 	#print out
 
 	for i in range(len(out)):
